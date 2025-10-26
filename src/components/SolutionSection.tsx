@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Target, CheckCircle, Sparkles } from 'lucide-react'
+import dashboardImage from '../assest/dashboard.webp'
 import WaveDivider from './WaveDivider'
-import DashboardIllustration from './DashboardIllustration'
 
 const SolutionSection = () => {
   const ref = useRef(null)
@@ -32,7 +32,7 @@ const SolutionSection = () => {
         </motion.div>
 
         {/* Two-column layout */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24" ref={ref}>
           {/* Left side - Text content */}
           <motion.div
             className="space-y-8 order-2 lg:order-1"
@@ -68,7 +68,17 @@ const SolutionSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <DashboardIllustration />
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-900/5">
+                <img 
+                  src={dashboardImage} 
+                  alt="Skillsio Dashboard" 
+                  className="w-full h-auto"
+                />
+              </div>
+              {/* Decorative glow */}
+              <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[105%] h-[105%] bg-gradient-to-br from-primary/10 to-teal-500/10 rounded-2xl blur-2xl"></div>
+            </div>
           </motion.div>
         </div>
         

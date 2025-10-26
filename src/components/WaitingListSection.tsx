@@ -39,7 +39,7 @@ const WaitingListSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative bg-[#F1F8F5] rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl border-2 border-primary/20 overflow-hidden">
+          <div className="relative bg-gradient-to-br from-[#F1F8F5] to-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl border-2 border-primary/20 overflow-hidden backdrop-blur-sm">
             {/* Decorative sparkles */}
             <div className="absolute top-6 right-6 opacity-20">
               <Sparkles className="w-12 h-12 text-primary" strokeWidth={1.5} />
@@ -53,11 +53,11 @@ const WaitingListSection = () => {
                   <Mail className="w-8 h-8 text-white" strokeWidth={1.5} />
                 </div>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-teal-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-teal-600 to-primary bg-clip-text text-transparent leading-tight">
                 Rejoignez les premiers utilisateurs de Skillsio
               </h2>
               
-              <p className="text-lg md:text-xl mb-10 text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl mb-12 text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Inscrivez-vous à notre newsletter pour être parmi les premiers à découvrir Skillsio
               </p>
               

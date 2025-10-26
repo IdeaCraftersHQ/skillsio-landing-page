@@ -4,7 +4,7 @@ import logoWhite from '../assest/logo.svg'
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 overflow-hidden border-t border-gray-800">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-teal-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-teal-500/10 to-primary/10 rounded-full blur-3xl"></div>
