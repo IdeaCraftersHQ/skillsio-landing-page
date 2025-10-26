@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import logoBlack from '../assest/logo-black.webp'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,9 +46,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-teal-600 bg-clip-text text-transparent hover:from-primary/80 hover:to-teal-500 transition-all"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            Skillsio
+            <img src={logoBlack} alt="Skillsio" className="h-8 md:h-10" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Linkedin, Twitter, Mail } from 'lucide-react'
+import logoWhite from '../assest/logo.svg'
 
 const Footer = () => {
   return (
@@ -18,10 +19,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-3xl font-bold mb-3">
-              <span className="bg-gradient-to-r from-primary to-teal-500 bg-clip-text text-transparent">Skills</span>
-              <span className="text-white">io</span>
-            </div>
+            <img src={logoWhite} alt="Skillsio" className="h-8 md:h-10 mb-3 mx-auto md:mx-0" />
             <p className="text-gray-400 text-sm">
               © Skillsio 2025
             </p>
