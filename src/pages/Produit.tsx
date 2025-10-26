@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useContext } from 'react'
 import { Brain, LayoutDashboard, Users, BarChart3, CheckCircle, Sparkles, Zap, Shield, TrendingUp, Target } from 'lucide-react'
 import WaitingListSection from '../components/WaitingListSection'
+import { WishlistModalContext } from '../App'
 
 const Produit = () => {
   const heroRef = useRef(null)
   const heroInView = useInView(heroRef, { once: true, margin: "-100px" })
+  const { openModal } = useContext(WishlistModalContext)
 
   const mainFeatures = [
     {
@@ -119,8 +121,8 @@ const Produit = () => {
               Skillsio combine intelligence artificielle et expertise RH pour vous offrir une solution d'évaluation des compétences précise, rapide et personnalisée.
             </motion.p>
             
-            <motion.a 
-              href="#waiting-list"
+            <motion.button 
+              onClick={openModal}
               className="inline-block bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-500 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -129,7 +131,7 @@ const Produit = () => {
               whileTap={{ scale: 0.98 }}
             >
               Essayer Skillsio
-            </motion.a>
+            </motion.button>
           </motion.div>
         </div>
       </section>

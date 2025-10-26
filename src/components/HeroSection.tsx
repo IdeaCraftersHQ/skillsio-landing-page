@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
+import { useContext } from 'react'
 import heroImage from '../assest/hero.webp'
+import { WishlistModalContext } from '../App'
 
 const HeroSection = () => {
+  const { openModal } = useContext(WishlistModalContext)
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center bg-gradient-to-br from-white via-[#F1F8F5]/30 to-teal-50/20 overflow-hidden pt-20">
       {/* Abstract geometric background patterns */}
@@ -57,8 +61,8 @@ const HeroSection = () => {
               Transformez vos évaluations en leviers de performance : détectez les écarts, suivez les progrès et renforcez l'efficacité de vos formations.
             </motion.p>
             
-            <motion.a 
-              href="#waiting-list"
+            <motion.button 
+              onClick={openModal}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-500 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,7 +74,7 @@ const HeroSection = () => {
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
               </svg>
-            </motion.a>
+            </motion.button>
           </motion.div>
 
           {/* Right side - Hero Image */}

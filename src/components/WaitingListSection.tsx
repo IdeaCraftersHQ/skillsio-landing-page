@@ -1,29 +1,14 @@
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useContext } from 'react'
 import { Mail, Sparkles } from 'lucide-react'
+import { WishlistModalContext } from '../App'
 
 const WaitingListSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    
-    // Here you would typically send the email to your backend
-    console.log('Email submitted:', email)
-    
-    setSubmitted(true)
-    setEmail('')
-    
-    // Reset the message after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false)
-    }, 5000)
-  }
+  const { openModal } = useContext(WishlistModalContext)
 
   return (
     <section id="waiting-list" className="relative py-20 md:py-32 bg-gradient-to-br from-white via-teal-50/20 to-primary/5 overflow-hidden">
@@ -61,39 +46,14 @@ const WaitingListSection = () => {
                 Inscrivez-vous à notre newsletter pour être parmi les premiers à découvrir Skillsio
               </p>
               
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <input 
-                    type="email" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Votre adresse email" 
-                    required
-                    className="flex-1 px-6 py-4 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-primary/30 transition-all shadow-md border border-gray-200"
-                  />
-                  <motion.button 
-                    type="submit"
-                    className="bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Rejoindre la liste d'attente
-                  </motion.button>
-                </div>
-                
-                {submitted && (
-                  <motion.p 
-                    className="mt-4 text-primary text-sm font-medium flex items-center justify-center gap-2"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Merci ! Nous vous contacterons bientôt.
-                  </motion.p>
-                )}
-              </form>
+              <motion.button 
+                onClick={openModal}
+                className="bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-500 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Rejoindre la liste d'attente
+              </motion.button>
             </div>
           </div>
         </motion.div>

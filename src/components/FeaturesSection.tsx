@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useContext } from 'react'
 import { Brain, Users, Shield, TrendingUp, CheckCircle } from 'lucide-react'
 import assessmentImage from '../assest/assessment.webp'
 import WaveDivider from './WaveDivider'
+import { WishlistModalContext } from '../App'
 
 const FeaturesSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const { openModal } = useContext(WishlistModalContext)
 
   const features = [
     {
@@ -111,14 +113,14 @@ const FeaturesSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.9, duration: 0.6 }}
         >
-          <motion.a 
-            href="#waiting-list"
+          <motion.button 
+            onClick={openModal}
             className="inline-block bg-white border-2 border-primary text-primary hover:bg-gradient-to-r hover:from-primary hover:to-teal-600 hover:text-white font-semibold px-10 py-4 rounded-full shadow-md hover:shadow-xl transform transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >
             En savoir plus sur le produit
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
 
