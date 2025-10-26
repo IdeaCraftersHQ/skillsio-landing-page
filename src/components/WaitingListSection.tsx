@@ -1,4 +1,3 @@
-import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useContext } from 'react'
