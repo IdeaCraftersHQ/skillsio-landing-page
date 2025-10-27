@@ -34,7 +34,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <motion.a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/company/skillsio-net/about/?viewAsMember=true" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-12 h-12 bg-gray-800/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-teal-600 rounded-xl flex items-center justify-center transition-all duration-300 border border-gray-700 hover:border-primary/50 group"

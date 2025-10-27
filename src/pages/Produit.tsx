@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useContext } from 'react'
-import { Brain, LayoutDashboard, Users, BarChart3, CheckCircle, Sparkles, Zap, Shield, TrendingUp, Target } from 'lucide-react'
+import { Brain, LayoutDashboard, Users, BarChart3, CheckCircle, Sparkles } from 'lucide-react'
 import WaitingListSection from '../components/WaitingListSection'
 import { WishlistModalContext } from '../App'
 
@@ -50,29 +50,6 @@ const Produit = () => {
         "Suivi des progrès",
         "Optimisation continue"
       ]
-    }
-  ]
-
-  const additionalFeatures = [
-    {
-      icon: Zap,
-      title: "Déploiement rapide",
-      description: "Mise en place en quelques minutes"
-    },
-    {
-      icon: Shield,
-      title: "Sécurité garantie",
-      description: "Données cryptées et conformes RGPD"
-    },
-    {
-      icon: TrendingUp,
-      title: "Évolutif",
-      description: "S'adapte à la croissance de votre entreprise"
-    },
-    {
-      icon: Target,
-      title: "Précision maximale",
-      description: "Résultats fiables et validés"
     }
   ]
 
@@ -185,52 +162,6 @@ const Produit = () => {
                       ))}
                     </ul>
                   </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Features */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-gray-50 via-white to-teal-50/30 overflow-hidden">
-        <div className="absolute top-20 left-0 w-72 h-72 bg-gradient-to-br from-emerald-400/5 to-primary/5 rounded-full blur-3xl"></div>
-
-        <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Pourquoi choisir Skillsio ?
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {additionalFeatures.map((feature, index) => {
-              const Icon = feature.icon
-              return (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 text-center group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary/10 to-teal-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {feature.description}
-                  </p>
                 </motion.div>
               )
             })}
