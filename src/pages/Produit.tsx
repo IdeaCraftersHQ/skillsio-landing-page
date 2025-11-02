@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useContext } from 'react'
-import { Brain, LayoutDashboard, Users, BarChart3, CheckCircle, Sparkles } from 'lucide-react'
+import { FlaskConical, LayoutDashboard, Lock, BarChart3, CheckCircle, Sparkles, Brain } from 'lucide-react'
 import WaitingListSection from '../components/WaitingListSection'
 import { WishlistModalContext } from '../App'
 
@@ -12,43 +12,53 @@ const Produit = () => {
 
   const mainFeatures = [
     {
-      icon: Brain,
-      title: "Évaluation intelligente des compétences",
-      description: "Notre IA analyse en profondeur les réponses des candidats pour identifier les compétences réelles, détecter les écarts de performance et générer des rapports détaillés avec des recommandations personnalisées pour chaque profil.",
+      icon: FlaskConical,
+      title: "Évaluation des compétences",
+      description: "Analysez les réponses, identifiez les écarts et recevez des rapports détaillés avec des recommandations personnalisées. Chaque collaborateur bénéficie d'un retour immédiat et d'un plan d'action individuel.",
       benefits: [
-        "Analyse IA en temps réel",
-        "Rapports détaillés automatiques",
-        "Recommandations personnalisées"
+        "Rapports détaillés avec recommandations",
+        "Retour immédiat pour chaque collaborateur",
+        "Plan d'action individuel personnalisé"
       ]
     },
     {
       icon: LayoutDashboard,
-      title: "Gestion RH centralisée",
-      description: "Accédez à une bibliothèque complète de tests prêts à l'emploi, invitez vos équipes en quelques clics et suivez leurs résultats en temps réel via un tableau de bord intuitif qui centralise toutes vos données RH.",
+      title: "Gestion RH simplifiée",
+      description: "Utilisez une bibliothèque de tests prêts à l'emploi, invitez vos équipes facilement et suivez leurs résultats en temps réel. Skillsio centralise les évaluations et simplifie le suivi global des performances.",
       benefits: [
-        "Bibliothèque de tests complète",
-        "Invitation en un clic",
-        "Suivi en temps réel"
+        "Bibliothèque de tests prêts à l'emploi",
+        "Invitation et suivi en temps réel",
+        "Centralisation des évaluations"
       ]
     },
     {
-      icon: Users,
-      title: "Expérience fluide",
-      description: "Offrez à vos collaborateurs un environnement d'évaluation clair, chronométré et sécurisé. La sauvegarde automatique et le suivi des progrès garantissent une expérience utilisateur optimale à chaque étape du parcours.",
+      icon: Lock,
+      title: "Expérience fluide et sécurisée",
+      description: "Proposez un environnement d'évaluation clair, chronométré et protégé, avec sauvegarde automatique et suivi des progrès. L'interface est pensée pour offrir une expérience fluide, intuitive et sans friction.",
       benefits: [
-        "Interface intuitive",
-        "Sauvegarde automatique",
-        "Environnement sécurisé"
+        "Environnement clair et protégé",
+        "Sauvegarde automatique des progrès",
+        "Interface fluide et intuitive"
       ]
     },
     {
       icon: BarChart3,
-      title: "Mesure de l'impact",
-      description: "Comparez les scores avant et après formation pour mesurer l'impact réel de vos programmes de développement. Identifiez les progrès, renforcez les acquis et optimisez continuellement vos stratégies de formation.",
+      title: "Suivi post-formation",
+      description: "Comparez les scores avant et après formation pour mesurer l'impact réel des dispositifs d'accompagnement (onboarding, formation, coaching, mentorat). Les résultats permettent d'objectiver la performance, de valider l'acquisition de compétences et d'ajuster les parcours de formation.",
       benefits: [
-        "Comparaison avant/après",
-        "Suivi des progrès",
-        "Optimisation continue"
+        "Comparaison avant/après formation",
+        "Mesure d'impact des dispositifs d'accompagnement",
+        "Validation et ajustement des parcours"
+      ]
+    },
+    {
+      icon: Brain,
+      title: "Follow-Up intelligent",
+      description: "Planifiez des relances et des suivis personnalisés après chaque évaluation ou formation. Les collaborateurs reçoivent des feedbacks ciblés, des micro-évaluations et des recommandations continues pour consolider leurs acquis et maintenir la progression dans le temps. Cette fonctionnalité au cœur de la technologie et de l'IA transforme le suivi post-accompagnement en apprentissage continu, garantissant un engagement durable et mesurable.",
+      benefits: [
+        "Relances automatisées personnalisées",
+        "Feedbacks ciblés et micro-évaluations",
+        "Apprentissage continu et engagement durable"
       ]
     }
   ]

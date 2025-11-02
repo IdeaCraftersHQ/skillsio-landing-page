@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useContext } from 'react'
-import { Brain, Users, Shield, TrendingUp, CheckCircle } from 'lucide-react'
-import assessmentImage from '../assest/assessment.webp'
+import { FlaskConical, Users, Lock, TrendingUp, CheckCircle, Brain } from 'lucide-react'
+import assessmentImage from '../assest/assessment.png'
 import WaveDivider from './WaveDivider'
 import { WishlistModalContext } from '../App'
 
@@ -13,28 +13,34 @@ const FeaturesSection = () => {
 
   const features = [
     {
-      icon: Brain,
-      title: "Évaluation des compétences par IA",
-      description: "Analysez les réponses, identifiez les écarts et recevez des rapports détaillés avec des recommandations personnalisées.",
+      icon: FlaskConical,
+      title: "Évaluation des compétences",
+      description: "Analysez les réponses, identifiez les écarts et recevez des rapports personnalisés avec plans d'action individuels.",
       gradient: "from-primary/10 to-teal-500/10"
     },
     {
       icon: Users,
       title: "Gestion RH simplifiée",
-      description: "Utilisez une bibliothèque de tests prêts à l'emploi, invitez vos équipes facilement et suivez leurs résultats en temps réel.",
+      description: "Accédez à une bibliothèque de tests prêts à l'emploi, invitez vos équipes et suivez leurs performances en temps réel.",
       gradient: "from-emerald-500/10 to-primary/10"
     },
     {
-      icon: Shield,
+      icon: Lock,
       title: "Expérience fluide et sécurisée",
-      description: "Proposez un environnement d'évaluation clair, chronométré et protégé, avec sauvegarde automatique et suivi des progrès.",
+      description: "Offrez un environnement clair, chronométré et protégé, avec sauvegarde automatique et suivi des progrès.",
       gradient: "from-teal-500/10 to-cyan-500/10"
     },
     {
       icon: TrendingUp,
       title: "Suivi post-formation",
-      description: "Comparez les scores avant/après formation pour mesurer l'impact et renforcer le développement des talents.",
+      description: "Mesurez l'impact des formations grâce à la comparaison des scores avant/après et ajustez les parcours selon les résultats.",
       gradient: "from-cyan-500/10 to-primary/10"
+    },
+    {
+      icon: Brain,
+      title: "Follow-up intelligent",
+      description: "Automatisez les relances, feedbacks et micro-évaluations pour un apprentissage continu et un engagement durable.",
+      gradient: "from-primary/10 to-emerald-500/10"
     }
   ]
 

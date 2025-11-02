@@ -35,30 +35,16 @@ const SolutionSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24" ref={ref}>
           {/* Left side - Text content */}
           <motion.div
-            className="space-y-8 order-2 lg:order-1"
+            className="order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            {/* First paragraph with icon */}
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <CheckCircle className="w-6 h-6 text-primary" strokeWidth={2} />
-              </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Skillsio est une plateforme d'évaluation des compétences alimentée par l'IA, conçue pour aider les entreprises et les individus à mesurer les compétences réelles, détecter les écarts et recommander des formations ciblées.
-              </p>
-            </div>
-
-            {/* Second paragraph with icon */}
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <CheckCircle className="w-6 h-6 text-primary" strokeWidth={2} />
-              </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                De la pré-évaluation avant formation à la mesure des progrès après formation, Skillsio fournit des données claires et exploitables pour transformer la formation en véritable performance.
-              </p>
-            </div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              Skillsio est la solution d'assessment nouvelle génération qui connecte l'évaluation, le suivi et la montée en compétences.
+              <br /><br />
+              Grâce à l'intelligence artificielle et à des fonctionnalités comme le Follow-Up intelligent, elle offre une vision complète et dynamique de la performance, de l'accompagnement et de l'évolution des talents.
+            </p>
           </motion.div>
 
           {/* Right side - Illustration */}
@@ -111,8 +97,8 @@ const SolutionSection = () => {
                 <CheckCircle className="w-6 h-6 text-primary" strokeWidth={2} />
               </div>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Skillsio comble le fossé entre les compétences acquises et celles réellement requises.
-                Grâce à des évaluations précises, des rapports personnalisés et un suivi post-formation, la plateforme aide chaque individu et chaque organisation à mesurer les progrès et à développer les talents de façon ciblée.
+              Skillsio comble le fossé entre les compétences acquises et celles réellement requises.
+              Grâce à des évaluations précises, des rapports personnalisés et un suivi post-formation, la plateforme aide chaque individu et chaque organisation à mesurer les progrès, renforcer la motivation et développer les talents de façon ciblée.
               </p>
             </div>
           </div>

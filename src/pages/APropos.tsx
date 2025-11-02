@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Target, Globe, Settings, CheckCircle } from 'lucide-react'
+import { Target, Eye, CheckCircle } from 'lucide-react'
 import WaitingListSection from '../components/WaitingListSection'
 
 const APropos = () => {
@@ -17,39 +17,33 @@ const APropos = () => {
   const pillars = [
     {
       icon: Target,
-      title: "Mission",
-      description: "Aider les entreprises et les individus à mesurer, développer et valoriser les compétences réelles grâce à une technologie d'évaluation intelligente et accessible.",
+      title: "Notre mission",
+      description: "Réduire l'écart entre le potentiel, les compétences et la performance réelle.\nSkillsio évalue, analyse et accompagne les collaborateurs tout au long de leur parcours pour objectiver la progression et soutenir les transformations humaines et organisationnelles.\nNotre mission : faire de l'évaluation un outil stratégique d'accompagnement, au service du développement des talents, du leadership et de la performance durable.",
       gradient: "from-primary/10 to-teal-500/10"
     },
     {
-      icon: Globe,
-      title: "Vision",
-      description: "Devenir la référence mondiale en matière d'évaluation des compétences par IA, en transformant la manière dont les organisations identifient, développent et optimisent les talents.",
+      icon: Eye,
+      title: "Notre vision",
+      description: "Créer un écosystème où chacun progresse selon ses forces, ses besoins et ses ambitions. Skillsio imagine un futur où l'accompagnement est continu, les retours sont instantanés, et les données sur les compétences permettent à chaque individu et à chaque organisation de piloter leur évolution en toute autonomie.\nGrâce à l'intelligence artificielle et à une approche centrée sur l'humain, nous rendons le développement des compétences et de la performance à la fois mesurable, fluide et personnalisé.",
       gradient: "from-teal-500/10 to-emerald-500/10"
-    },
-    {
-      icon: Settings,
-      title: "Approche",
-      description: "Nous combinons intelligence artificielle de pointe, expertise en sciences de l'éducation et design centré sur l'utilisateur pour créer une expérience d'évaluation fluide et pertinente.",
-      gradient: "from-emerald-500/10 to-primary/10"
     }
   ]
 
   const approachPillars = [
     {
       number: "01",
-      title: "Technologie IA avancée",
-      description: "Algorithmes d'apprentissage automatique pour une analyse précise et personnalisée des compétences."
+      title: "Mesurer avec précision",
+      description: "Mesurer avec précision les compétences techniques, comportementales et relationnelles pour établir une base objective."
     },
     {
       number: "02",
-      title: "Expertise pédagogique",
-      description: "Méthodologies d'évaluation validées scientifiquement pour garantir la pertinence et la fiabilité des résultats."
+      title: "Accompagner le développement",
+      description: "Accompagner le développement des individus et des équipes grâce à des feedbacks ciblés, des recommandations dynamiques et un suivi continu (Follow-Up intelligent)."
     },
     {
       number: "03",
-      title: "Design centré utilisateur",
-      description: "Interface intuitive et expérience fluide pour faciliter l'adoption et maximiser l'engagement."
+      title: "Évaluer les progrès",
+      description: "Évaluer les progrès dans le temps pour démontrer l'impact réel de l'accompagnement sur la performance, la motivation et la transformation organisationnelle."
     }
   ]
 
@@ -104,31 +98,43 @@ const APropos = () => {
         </div>
       </section>
 
-      {/* Mission, Vision, Approach Cards */}
-      <section className="relative py-20 md:py-32 bg-white overflow-hidden">
+      {/* Mission, Vision Cards */}
+      <section className="relative py-20 md:py-32 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
-          <div className="grid md:grid-cols-3 gap-8" ref={pillarsRef}>
+          <div className="max-w-5xl mx-auto space-y-12" ref={pillarsRef}>
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon
               return (
                 <motion.div
                   key={index}
                   className="group"
-                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                  animate={pillarsInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={pillarsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: index * 0.2, duration: 0.7 }}
                 >
-                  <div className={`bg-gradient-to-br ${pillar.gradient} rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-primary/10`}>
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  <div className={`relative bg-gradient-to-br ${pillar.gradient} rounded-3xl p-8 md:p-12 border-2 border-primary/10 hover:border-primary/30 transition-all duration-300 overflow-hidden shadow-md hover:shadow-xl`}>
+                    {/* Subtle overlay for depth */}
+                    <div className="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                      {/* Icon */}
+                      <div className="flex-shrink-0">
+                        <div className="w-20 h-20 bg-gradient-to-br from-primary to-teal-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                          <Icon className="w-10 h-10 text-white" strokeWidth={1.5} />
+                        </div>
+                      </div>
+                      
+                      {/* Text content */}
+                      <div className="flex-1">
+                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                          {pillar.description}
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {pillar.description}
-                    </p>
                   </div>
                 </motion.div>
               )
@@ -151,48 +157,52 @@ const APropos = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">
-                Notre approche en 3 piliers
+                Notre approche
               </h2>
-              <p className="text-lg text-gray-600">
-                Une méthodologie éprouvée pour garantir des évaluations de qualité
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Skillsio s'appuie sur trois piliers fondamentaux pour garantir un accompagnement complet et efficace
               </p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-0">
               {approachPillars.map((pillar, index) => (
                 <motion.div
                   key={index}
-                  className="relative"
+                  className="relative flex gap-6 items-center group"
                   initial={{ opacity: 0, x: -50 }}
                   animate={approachInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: index * 0.2, duration: 0.6 }}
                 >
-                  <div className="flex gap-6 items-start group">
+                  {/* Number badge with connector */}
+                  <div className="flex-shrink-0 relative flex flex-col items-center">
+                    {/* Connector line above (except for first item) */}
+                    {index > 0 && (
+                      <div className="absolute bottom-full w-0.5 h-8 bg-gradient-to-b from-primary/50 to-teal-500/50 mb-0"></div>
+                    )}
+                    
                     {/* Number badge */}
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-teal-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-2xl font-bold text-white">{pillar.number}</span>
-                      </div>
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-teal-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
+                      <span className="text-2xl font-bold text-white">{pillar.number}</span>
                     </div>
-
-                    {/* Content */}
-                    <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                      <div className="flex items-start gap-3 mb-3">
-                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
-                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
-                          {pillar.title}
-                        </h3>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed ml-9">
-                        {pillar.description}
-                      </p>
-                    </div>
+                    
+                    {/* Connector line below (except for last item) */}
+                    {index < approachPillars.length - 1 && (
+                      <div className="absolute top-full w-0.5 h-8 bg-gradient-to-b from-primary/50 to-teal-500/50 mt-0"></div>
+                    )}
                   </div>
 
-                  {/* Connector line */}
-                  {index < approachPillars.length - 1 && (
-                    <div className="ml-8 h-8 w-0.5 bg-gradient-to-b from-primary/50 to-teal-500/50"></div>
-                  )}
+                  {/* Content */}
+                  <div className="flex-1 bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 my-4">
+                    <div className="flex items-start gap-3 mb-3">
+                      <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" strokeWidth={2} />
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
+                        {pillar.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed ml-9">
+                      {pillar.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
