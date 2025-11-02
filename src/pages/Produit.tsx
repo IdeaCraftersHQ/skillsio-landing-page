@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useContext } from 'react'
-import { FlaskConical, LayoutDashboard, Lock, BarChart3, CheckCircle, Sparkles, Brain } from 'lucide-react'
+import { FlaskConical, LayoutDashboard, Lock, BarChart3, Sparkles, Brain } from 'lucide-react'
 import WaitingListSection from '../components/WaitingListSection'
 import { WishlistModalContext } from '../App'
 
@@ -14,52 +14,27 @@ const Produit = () => {
     {
       icon: FlaskConical,
       title: "Évaluation des compétences",
-      description: "Analysez les réponses, identifiez les écarts et recevez des rapports détaillés avec des recommandations personnalisées. Chaque collaborateur bénéficie d'un retour immédiat et d'un plan d'action individuel.",
-      benefits: [
-        "Rapports détaillés avec recommandations",
-        "Retour immédiat pour chaque collaborateur",
-        "Plan d'action individuel personnalisé"
-      ]
+      description: "Analysez les réponses, identifiez les écarts et recevez des rapports détaillés avec des recommandations personnalisées. Chaque collaborateur bénéficie d'un retour immédiat et d'un plan d'action individuel."
     },
     {
       icon: LayoutDashboard,
       title: "Gestion RH simplifiée",
-      description: "Utilisez une bibliothèque de tests prêts à l'emploi, invitez vos équipes facilement et suivez leurs résultats en temps réel. Skillsio centralise les évaluations et simplifie le suivi global des performances.",
-      benefits: [
-        "Bibliothèque de tests prêts à l'emploi",
-        "Invitation et suivi en temps réel",
-        "Centralisation des évaluations"
-      ]
+      description: "Utilisez une bibliothèque de tests prêts à l'emploi, invitez vos équipes facilement et suivez leurs résultats en temps réel. Skillsio centralise les évaluations et simplifie le suivi global des performances."
     },
     {
       icon: Lock,
       title: "Expérience fluide et sécurisée",
-      description: "Proposez un environnement d'évaluation clair, chronométré et protégé, avec sauvegarde automatique et suivi des progrès. L'interface est pensée pour offrir une expérience fluide, intuitive et sans friction.",
-      benefits: [
-        "Environnement clair et protégé",
-        "Sauvegarde automatique des progrès",
-        "Interface fluide et intuitive"
-      ]
+      description: "Proposez un environnement d'évaluation clair, chronométré et protégé, avec sauvegarde automatique et suivi des progrès. L'interface est pensée pour offrir une expérience fluide, intuitive et sans friction."
     },
     {
       icon: BarChart3,
       title: "Suivi post-formation",
-      description: "Comparez les scores avant et après formation pour mesurer l'impact réel des dispositifs d'accompagnement (onboarding, formation, coaching, mentorat). Les résultats permettent d'objectiver la performance, de valider l'acquisition de compétences et d'ajuster les parcours de formation.",
-      benefits: [
-        "Comparaison avant/après formation",
-        "Mesure d'impact des dispositifs d'accompagnement",
-        "Validation et ajustement des parcours"
-      ]
+      description: "Comparez les scores avant et après formation pour mesurer l'impact réel des dispositifs d'accompagnement (onboarding, formation, coaching, mentorat). Les résultats permettent d'objectiver la performance, de valider l'acquisition de compétences et d'ajuster les parcours de formation."
     },
     {
       icon: Brain,
       title: "Follow-Up intelligent",
-      description: "Planifiez des relances et des suivis personnalisés après chaque évaluation ou formation. Les collaborateurs reçoivent des feedbacks ciblés, des micro-évaluations et des recommandations continues pour consolider leurs acquis et maintenir la progression dans le temps. Cette fonctionnalité au cœur de la technologie et de l'IA transforme le suivi post-accompagnement en apprentissage continu, garantissant un engagement durable et mesurable.",
-      benefits: [
-        "Relances automatisées personnalisées",
-        "Feedbacks ciblés et micro-évaluations",
-        "Apprentissage continu et engagement durable"
-      ]
+      description: "Planifiez des relances et des suivis personnalisés après chaque évaluation ou formation. Les collaborateurs reçoivent des feedbacks ciblés, des micro-évaluations et des recommandations continues pour consolider leurs acquis et maintenir la progression dans le temps. Cette fonctionnalité au cœur de la technologie et de l'IA transforme le suivi post-accompagnement en apprentissage continu, garantissant un engagement durable et mesurable."
     }
   ]
 
@@ -160,17 +135,9 @@ const Produit = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                    <p className="text-gray-600 leading-relaxed">
                       {feature.description}
                     </p>
-                    <ul className="space-y-3">
-                      {feature.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center gap-3">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" strokeWidth={2} />
-                          <span className="text-gray-700">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </motion.div>
               )
