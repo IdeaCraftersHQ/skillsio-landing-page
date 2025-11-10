@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
 import { useContext } from 'react'
-import heroImage from '../assest/hero.webp'
+import heroImage from '../assest/hero-2.webp'
 import { WishlistModalContext } from '../App'
 
 const HeroSection = () => {
